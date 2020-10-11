@@ -1,0 +1,28 @@
+server:
+   port: 8080
+   servlet:
+      jsp:
+         init-parameters: 
+            development: true 
+
+spring:
+   profiles:
+      active: local
+      
+   mvc:
+      view:
+         prefix: /WEB-INF/
+         suffix: .jsp  
+         
+         
+   datasource:
+      url: jdbc:mysql://localhost:3306/khwan?serverTimezone=UTC
+      username: root
+      password: 1234
+      driver-class-name: com.mysql.cj.jdbc.Driver 
+   jpa:
+      generate-ddl: true
+      hibernate.ddl-auto: none
+      naming:
+         physical-strategy: com.khwan.domain.config.NamginConfig
+       
